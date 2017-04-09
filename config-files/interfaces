@@ -1,15 +1,17 @@
 # This file was installed with the RaspberryPi3-HotSpot (DSA) script
 # For more info see https://github.com/Dorha85/RaspberryPi3-HotSpot.git
+# sudo hostname -I
 # sudo nano /etc/network/interfaces
 # ------------------------------------------------------------------------
 auto lo
 
 iface lo inet loopback
-iface eth0 inet dhcp
 
- # Custom static IP address for wlan0.
- # sudo hostname -I
+iface eth0 inet manual
+
+ # Static IP address for wlan0.
 	auto wlan0
+
 	iface wlan0 inet static
 	wireless-power off
   	address 192.168.111.1
