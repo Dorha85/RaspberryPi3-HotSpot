@@ -41,6 +41,7 @@ Installation:
 
 Notes and configuration
 -----------------------
+* To delete instaler folder:  sudo rm -r RaspberryPi3-HotSpot
 
 * To change default WiFi channel, edit /etc/hostapd/hostapd.conf accordingly
 
