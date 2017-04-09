@@ -10,7 +10,7 @@ Features:
 
 * Configured WiFi network is WPA encrypted.
 
-* Default SSID of "RaspberryPiFi" and WPA key of "0123456789A" can be modified during install
+* Default SSID of "PiFiOnLine" and WPA key of "adrian12345" can be modified during install
 
 * Once set up, the local network facilites of the Pi will still operate as normal
 
