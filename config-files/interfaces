@@ -7,10 +7,11 @@ auto lo
 iface lo inet loopback
 iface eth0 inet dhcp
 
-auto wlan0
-
-iface wlan0 inet static
-  address 192.168.111.1
-  netmask 255.255.255.0
-
-up iptables-restore < /etc/iptables.ipv4.nat
+ # Custom static IP address for wlan0.
+ # sudo hostname -I
+	auto wlan0
+	iface wlan0 inet static
+	wireless-power off
+  	address 192.168.111.1
+  	netmask 255.255.255.0
+	up iptables-restore < /etc/iptables.ipv4.nat
