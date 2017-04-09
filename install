@@ -73,9 +73,15 @@ then
 	####################################################################
 	# copy configs to relevant directories
 	####################################################################
-				
+	
+	echo "Configuring default hostapd"
+	cp ./etc/default/hostapd /etc/default/
+	
 	echo "Configuring DHCP"
-	cp ./config-files/udhcpd_google.conf /etc/udhcpd.conf
+	cp ./config-files/udhcpd_opendns.conf /etc/udhcpd.conf
+	
+	echo "Configuring DHCPCD static IP"
+	cp ./config-files/dhcpcd.conf /etc/
 
 	echo "Configuring interfaces"
 	cp ./config-files/interfaces /etc/network
@@ -121,9 +127,6 @@ fi
 	echo "Initialising DHCP server"
 	service udhcpd start
 	update-rc.d udhcpd enable
-	
-	echo "Configuring DHCPCD static IP"
-	cp ./etc/dhcpcd.conf /etc/dhcpcd.conf
 	
 	echo "================================================================"
 	echo "=================== Configuration complete! ===================="
