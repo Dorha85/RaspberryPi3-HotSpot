@@ -1,5 +1,5 @@
-# This file was installed with the RPI-Wireless-Hotspot script
-# For more info see https://github.com/unixabg/RPI-Wireless-Hotspot
+# This file was installed with the RaspberryPi3-HotSpot (DSA) script
+# For more info see https://github.com/Dorha85/RaspberryPi3-HotSpot.git
 # ------------------------------------------------------------------------
 auto lo
 
