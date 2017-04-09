@@ -28,7 +28,7 @@ Installation:
 * In the terminal, run:
     sudo git clone https://github.com/Dorha85/RaspberryPi3-HotSpot.git
 
-* Navigate to folder, and execute "sudo ./install"
+* Navigate to folder, [ cd RaspberryPi3-HotSpot ] and execute [ sudo ./install ]
 
 * Confirm that you are happy for changes to be made
 
