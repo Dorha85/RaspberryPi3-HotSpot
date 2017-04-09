@@ -69,9 +69,11 @@ then
 	####################################################################
 	# copy configs to relevant directories
 	####################################################################
-
+	echo "Configuring DHCPCD static IP"
+				cp ./etc/dhcpcd.conf /etc/dhcpcd.conf
+				
 	echo "Configuring DHCP"
-				cp ./config-files/udhcpd_opendns.conf /etc/udhcpd.conf
+				cp ./config-files/udhcpd_google.conf /etc/udhcpd.conf
 
 	echo "Configuring interfaces"
 	if [ -n "${_ROUTER}" ]; then
@@ -79,7 +81,7 @@ then
 	else
 		cp ./config-files/interfaces /etc/network
 	fi
-
+	
 	echo "Configuring hostapd"
 	read -r -p "Do you want to ues the default wifi password of adrian12345 and ssid of PiFiPi3? [y/N] " althostapdresponse
 
