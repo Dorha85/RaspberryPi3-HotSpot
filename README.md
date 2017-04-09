@@ -1,10 +1,7 @@
 RPI-Wireless-Hotspot
 ====================
 
-Configures your Raspberry Pi with an attatched WiFi dongle or a Raspberry Pi3 with built in WiFi as a hotspot,
-broadcasting your ethernet connection to other devices. Could be useful in hotel rooms, college dorms
-or if you just don't feel like buying a router!
-
+Configures your Raspberry Pi3 with built in WiFi as a hotspot, broadcasting your ethernet connection to other devices.
 
 Features:
 ---------
@@ -23,18 +20,10 @@ Features:
 
 * Allows chromecast compatibility with unblock-us by intercepting google's DNS requests on the pi
 
-Requirements:
--------------
-
-1. A Raspberry Pi model B or Pi3 running raspbian
-
-2. A Raspbian compatible Wifi adapter. This script assumes that your adapter uses the nl80211 drivers in hostapd (the majority of new products should support this). Others can be made to work, but require a custom compilation of hostapd (guides are out there).
-
-3. An active ethernet connection
-
 
 Installation:
 -------------
+* sudo apt-get install git
 
 * In the terminal, run:
     git clone https://github.com/unixabg/RPI-Wireless-Hotspot.git
