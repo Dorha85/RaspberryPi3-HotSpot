@@ -62,15 +62,17 @@ then
 	then
 		cp /etc/iptables.ipv4.nat /etc/iptables.ipv4.nat.old
 	fi
-
+	
+	if [ -f /etc/dhcpcd.conf ]
+	then
+		cp /etc/dhcpcd.conf /etc/dhcpcd.conf.old
+	fi
 
 	echo "Config Files backed up"
 
 	####################################################################
 	# copy configs to relevant directories
 	####################################################################
-	echo "Configuring DHCPCD static IP"
-				cp ./etc/dhcpcd.conf /etc/dhcpcd.conf
 				
 	echo "Configuring DHCP"
 				cp ./config-files/udhcpd_google.conf /etc/udhcpd.conf
@@ -123,8 +125,10 @@ fi
 	echo "Initialising DHCP server"
 	service udhcpd start
 	update-rc.d udhcpd enable
-
-
+	
+	echo "Configuring DHCPCD static IP"
+	cp ./etc/dhcpcd.conf /etc/dhcpcd.conf
+	
 	echo "================================================================"
 	echo "=================== Configuration complete! ===================="
 	echo "================================================================"
