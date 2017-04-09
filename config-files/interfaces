@@ -1,5 +1,6 @@
 # This file was installed with the RaspberryPi3-HotSpot (DSA) script
 # For more info see https://github.com/Dorha85/RaspberryPi3-HotSpot.git
+# sudo nano /etc/network/interfaces
 # ------------------------------------------------------------------------
 auto lo
 
@@ -9,7 +10,7 @@ iface eth0 inet dhcp
 auto wlan0
 
 iface wlan0 inet static
-  address 192.168.42.1
+  address 192.168.111.1
   netmask 255.255.255.0
 
 up iptables-restore < /etc/iptables.ipv4.nat
