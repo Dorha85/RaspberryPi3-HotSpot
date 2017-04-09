@@ -26,7 +26,7 @@ Installation:
 * sudo apt-get install git
 
 * In the terminal, run:
-    git clone https://github.com/Dorha85/RaspberryPi3-HotSpot.git
+    sudo git clone https://github.com/Dorha85/RaspberryPi3-HotSpot.git
 
 * Navigate to folder, and execute "sudo ./install"
 
