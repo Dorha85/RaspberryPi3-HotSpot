@@ -10,7 +10,7 @@ Features:
 
 * Configured WiFi network is WPA encrypted.
 
-* Default SSID of "PiFi-Spot" and WPA key of "adrian12345" can be modified during install
+* Default SSID of "PiFi-Spot" and WPA key of "wifi12345" can be modified during install
 
 * Configured Static IP 192.168.0.200
 
