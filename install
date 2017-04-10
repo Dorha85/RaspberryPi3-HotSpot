@@ -113,12 +113,6 @@ fi
 		cp ./config-files/iptables.ipv4.nat /etc
 		
 	touch /var/lib/misc/udhcpd.leases
-
-	echo "Configuring default hostapd"
-	cp ./config-files/hostapd /etc/default
-	
-	echo "Configuring DHCPCD static IP"
-	cp ./config-files/dhcpcd.conf /etc/
 	
 	echo "Initialising access point"
 	service hostapd start
@@ -127,6 +121,9 @@ fi
 	echo "Initialising DHCP server"
 	service udhcpd start
 	update-rc.d udhcpd enable
+	
+	echo "Configuring static IP"
+	cp ./config-files/dhcpcd.conf /etc/
 	
 	echo "================================================================"
 	echo "=================== Configuration complete! ===================="
