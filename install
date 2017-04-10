@@ -78,9 +78,17 @@ then
 	echo "Configuring DHCP"
 	cp ./config-files/udhcpd_opendns.conf /etc/udhcpd.conf
 	
-	echo "Configuring interfaces"
-	cp ./config-files/interfaces /etc/network
+	echo "Copy in the file to enable udhcpd"
+	# Copy in the file to enable udhcpd
+	cp ./config-files/udhcpd /etc/default
 	
+	echo "Configuring interfaces"
+	if [ -n "${_ROUTER}" ]; then
+		sed -e "s/ROUTER/${_ROUTER}/g" ./config-files/interfaces-template > /etc/network/interfaces
+	else
+		cp ./config-files/interfaces /etc/network
+	fi
+
 	echo "Configuring hostapd"
 	read -r -p "Do you want to ues the default wifi password of adrian12345 and ssid of PiFiPi3? [y/N] " althostapdresponse
 
@@ -104,13 +112,18 @@ then
 		done
 		sed -e "s/adrian12345/${_PASSWORD1}/g" -e "s/PiFiPi3/${_SSID}/g" ./config-files/hostapd.conf > /etc/hostapd/hostapd.conf
 	fi
+	
 	cp ./config-files/hostapd /etc/default
-fi
+	
+	fi
+	
 	echo "Configuring NAT"
 	cp ./config-files/sysctl.conf /etc
 
 	echo "Configuring iptables"
 		cp ./config-files/iptables.ipv4.nat /etc
+		
+		fi
 		
 	touch /var/lib/misc/udhcpd.leases
 	
