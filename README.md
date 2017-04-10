@@ -12,6 +12,8 @@ Features:
 
 * Default SSID of "PiFiOnLine" and WPA key of "adrian12345" can be modified during install
 
+* Configured Static IP 192.168.0.200
+
 Installation:
 -------------
 * sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get install git
