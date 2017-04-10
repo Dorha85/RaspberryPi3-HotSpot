@@ -110,7 +110,7 @@ then
 			read -r -s -p "Please enter the new password again: " _PASSWORD2
 			echo
 		done
-		sed -e "s/adrian12345/${_PASSWORD1}/g" -e "s/PiFiPi3/${_SSID}/g" ./config-files/hostapd.conf > /etc/hostapd/hostapd.conf
+		sed -e "s/wifi12345/${_PASSWORD1}/g" -e "s/PiFi-Spot/${_SSID}/g" ./config-files/hostapd.conf > /etc/hostapd/hostapd.conf
 	fi
 	
 	cp ./config-files/hostapd /etc/default
