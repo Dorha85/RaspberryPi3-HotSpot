@@ -133,6 +133,12 @@ then
 	service udhcpd start
 	update-rc.d udhcpd enable
 	
+	echo "Configuring /etc/environment"
+	cp ./config-files/environment /etc/
+	
+	echo "Configuring /etc/default/crda"
+	cp ./config-files/crda /etc/default/
+	
 	echo "Configuring static IP"
 	cp ./config-files/dhcpcd.conf /etc/
 	
