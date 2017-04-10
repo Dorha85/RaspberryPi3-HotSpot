@@ -3,9 +3,10 @@
 
 clear
 
-echo "======================================================="
-echo "======== Setting up Raspberry Pi WiFi hotspot ========="
-echo "======================================================="
+echo "========================================================"
+echo "======== Setting up Raspberry Pi3 WiFi Hotspot ========="
+echo "=======================DSA=============================="
+echo "========================================================"
 
 read -r -p "This script will make changes to your system which may break some applications and may require you to reimage your SD card. Are you sure that you wish to continue? [y/N] " confirm
 
@@ -74,15 +75,9 @@ then
 	# copy configs to relevant directories
 	####################################################################
 	
-	echo "Configuring default hostapd"
-	cp ./etc/default/hostapd /etc/default/
-	
 	echo "Configuring DHCP"
 	cp ./config-files/udhcpd_opendns.conf /etc/udhcpd.conf
 	
-	echo "Configuring DHCPCD static IP"
-	cp ./config-files/dhcpcd.conf /etc/
-
 	echo "Configuring interfaces"
 	cp ./config-files/interfaces /etc/network
 	
@@ -111,7 +106,6 @@ then
 	fi
 	cp ./config-files/hostapd /etc/default
 fi
-
 	echo "Configuring NAT"
 	cp ./config-files/sysctl.conf /etc
 
@@ -120,6 +114,12 @@ fi
 		
 	touch /var/lib/misc/udhcpd.leases
 
+	echo "Configuring default hostapd"
+	cp ./config-files/hostapd /etc/default
+	
+	echo "Configuring DHCPCD static IP"
+	cp ./config-files/dhcpcd.conf /etc/
+	
 	echo "Initialising access point"
 	service hostapd start
 	update-rc.d hostapd enable
