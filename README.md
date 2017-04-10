@@ -37,6 +37,7 @@ Installation:
 Notes and configuration
 -----------------------
 * To delete instaler folder:  sudo rm -r RaspberryPi3-HotSpot
+* Problem with Git Host: git config --global --unset http.proxy
 
 * To change default WiFi channel:   sudo nano /etc/hostapd/hostapd.conf accordingly
 * To change wifi password:          sudo nano /etc/hostapd/hostapd.conf
