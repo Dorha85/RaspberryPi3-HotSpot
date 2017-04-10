@@ -4,15 +4,26 @@
 # sudo nano /etc/network/interfaces
 # ------------------------------------------------------------------------
 auto lo
+#iface lo inet loopback
+#iface eth0 inet dhcp
 
-iface lo inet loopback
-iface eth0 inet dhcp
+# Static IP address for eth0
+iface eth0 inet static
+    address 192.168.0.200
+    netmask 255.255.255.0
+    gateway 192.168.0.1
+    dns-search google.com
+    dns-nameservers 8.8.8.8 8.8.4.4 
+     up iptables-restore < /etc/iptables.ipv4.nat
 
- # Static IP address for wlan0.
+
+ # Static IP address for wlan0
     auto wlan0
 
     iface wlan0 inet static
     wireless-power off
     address 192.168.42.1
     netmask 255.255.255.0
+    dns-search google.com
+    dns-nameservers 8.8.8.8 8.8.4.4
     up iptables-restore < /etc/iptables.ipv4.nat
