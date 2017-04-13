@@ -142,6 +142,9 @@ then
 	echo "Configuring static IP"
 	cp ./config-files/dhcpcd.conf /etc/
 	
+	echo "WLAN -power_save off "
+	sudo iw dev wlan0 set power_save off
+	
 	echo "================================================================"
 	echo "=================== Configuration complete! ===================="
 	echo "================================================================"
@@ -158,9 +161,3 @@ then
  #   exit 1
 
 fi
-
-
-
-
-
-
