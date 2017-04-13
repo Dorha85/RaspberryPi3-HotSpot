@@ -144,6 +144,8 @@ then
 	
 	echo "WLAN -power_save off "
 	sudo iw dev wlan0 set power_save off
+	sleep 10
+	sudo iwconfig
 	
 	echo "================================================================"
 	echo "=================== Configuration complete! ===================="
@@ -152,7 +154,7 @@ then
 	echo "+++++++++++++++++  REBOOTING in 10 SECONDS  ++++++++++++++++++++"
 	echo "++++++++++++++++++++++ CTL-C to cancel ++++++++++++++++++++++++"
 
-	sleep 10
+	sleep 14
 	reboot
 
 	exit 0
